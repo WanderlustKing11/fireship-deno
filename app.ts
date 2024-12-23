@@ -2,7 +2,7 @@ const num = 23;
 
 let str: string;
 
-str = "hello"
+str = "hello";
 
 // str = 420
 
@@ -15,21 +15,20 @@ str = "hello"
 // This will give us a type error (if line 7 isn't commented out), and the code won't actually run
 // or just run: `deno check app.ts`
 
-export function multiply(a:number, b:number):number {
-    return a * b
+export function multiply(a: number, b: number): number {
+  return a * b;
 }
 
 // Objects
 
 const human = {
-    dna: "AGTC",
-    age: 23,
-    sex: true,
-}
+  dna: "AGTC",
+  age: 23,
+  sex: true,
+};
 
 let human2: Human;
 // human2.age
-
 
 // interface Human {
 //     dna: string,
@@ -38,37 +37,34 @@ let human2: Human;
 // }
 
 interface Human {
-    dna: string,
-    age: number,
-    sex: HumanSex
+  dna: string;
+  age: number;
+  sex: HumanSex;
 }
 
-type HumanSex =  'male' | 'female' | 'cyborg'
-
+type HumanSex = "male" | "female" | "cyborg";
 
 // TypeScript generics
 
 type Dog = { name: string };
 type Cat = { name: string };
 
-const animal: Cat = { name: 'fluffy' }
+const animal: Cat = { name: "fluffy" };
 
 interface Robot<T> {
-    chip: string;
-    animal: T;
+  chip: string;
+  animal: T;
 }
 
-const robotCat: Robot<Cat> = { animal, chip: 'Intel' };
-
+const robotCat: Robot<Cat> = { animal, chip: "Intel" };
 
 //////////////////
 
 async function doAsync(): Promise<Cat> {
-    return { name: 'fluffy' };
+  return { name: "fluffy" };
 }
 
-doAsync
-
+doAsync;
 
 /////////////////
 
@@ -84,7 +80,7 @@ let el: HTMLElement;
 
 ////// Permissions ///////
 
-await Deno.readFile('./diary.txt');
+await Deno.readFile("./diary.txt");
 // to avoid the prompt that allows us to read the file, run: `deno run --allow-read <file.ts>
 
 // There's an easier way to do this, using the `-A` flag instead:
@@ -94,10 +90,18 @@ await Deno.readFile('./diary.txt');
 // want to grant access to specific ones, then run:
 // `deno run --allow-read --deny-read =./diary.txt app.ts`
 
-
 /////////////////////////////////////////////////////////////////
 
 ///////  Env Vars  ////////
 
-const code = Deno.env.get('KILLCODE')
+const code = Deno.env.get("KILLCODE");
 
+/////////////////////////////////////////////////////////////////
+
+///////  Clean Code  ////////
+
+import { toKebabCase } from "@std/text";
+
+const useMePlease = 23;
+
+// run: `deno lint app.ts`

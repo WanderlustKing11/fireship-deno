@@ -82,3 +82,19 @@ Here are some random pointers that I learned while going through the videos.
 
 - Make sure to keep **.env** in your `.gitignore` file so you don't accidentally commit it to your public git repo.
 
+
+## Formatting && Linting
+- `dino lint [OPTIONS] [files]...`
+
+- Instead of as a 3rth party, lint comes with Deno. Comes with squigly lines and hover-over options.
+
+- You can use `deno fmt [OPTION] [files]...` to configure line width, semi-colons, double quotes, etc. It's all about the aesthetics of the code. 
+    - To change the default format, everything can be customized in the deno.json file.
+    - The deno docs can tell you how to add format object and options to the json file.
+
+- It's pretty cool that Deno really only makes you deal with one config file.
+
+- In the **lint** and **fmt** objects, you're also able to *include* and *exclude* **files** and **directories**. Like, you might want to only run linter on the source directory that contains your source code, but exclude it on your testing data.
+
+
+
