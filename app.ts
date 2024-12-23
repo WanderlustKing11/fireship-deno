@@ -94,3 +94,10 @@ await Deno.readFile('./diary.txt');
 // want to grant access to specific ones, then run:
 // `deno run --allow-read --deny-read =./diary.txt app.ts`
 
+
+/////////////////////////////////////////////////////////////////
+
+///////  Env Vars  ////////
+
+const code = Deno.env.get('KILLCODE')
+

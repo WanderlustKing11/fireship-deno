@@ -70,3 +70,15 @@ Here are some random pointers that I learned while going through the videos.
 - Unix commands can be used direclty in *task*.
 
 
+## ENV VARS
+- It's possible to set Env Vars in tasks using the export keyword:
+    - `"dev": "export KILLCODE=hello && deno run app.ts"`
+    - then in app.ts: `Deno.env.get('KILLCODE')
+    - this is a *synchronous* api, so there's no need to use **await** or such to retrieve an env var.
+
+- The standard way to use mulitple Env Vars is to use a **.env** file. We can simply add this to our file structure. In Deno, this is managed automatically, but we have to include the `--env` flag in the run command.
+    - `"dev": "deno run --env app.ts"`
+    - This tells Deno to take our .env file and load it into our environment.
+
+- Make sure to keep **.env** in your `.gitignore` file so you don't accidentally commit it to your public git repo.
+
