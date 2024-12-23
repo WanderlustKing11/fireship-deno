@@ -11,4 +11,4 @@ export function multiply(a:number, b: number) {
 // pull up the terminal and run: `deno doc --html --name="My library" lib.ts
 
 // then look in the new 'docs' folder, and in the 'index.html'
-// either run locally, or 
+// either run locally, or copy path into a browser

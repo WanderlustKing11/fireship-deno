@@ -80,3 +80,17 @@ doAsync
 let doc: Document;
 let el: HTMLElement;
 
+/////////////////////////////////////////////////////////////////
+
+////// Permissions ///////
+
+await Deno.readFile('./diary.txt');
+// to avoid the prompt that allows us to read the file, run: `deno run --allow-read <file.ts>
+
+// There's an easier way to do this, using the `-A` flag instead:
+// `deno run -A app.ts`
+
+// We can choose to be more granlar with our permissions. If we have multiple files, but we only
+// want to grant access to specific ones, then run:
+// `deno run --allow-read --deny-read =./diary.txt app.ts`
+

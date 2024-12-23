@@ -56,11 +56,29 @@ import {  } from 'npm:lodash.camelcase'
 import { invert } from "jsr:@std/collections"
 import { assertEquals } from "jsr:@std/assert"
 
-const challenge = { a: "x", b: "y", c: "z" };
+export function switchValKeys() {
+    const challenge = { a: "x", b: "y", c: "z" };
 
-// create a new objec that switches the keys and the value around
-const result = { x: "a", y: "b", z: "c" };  // Do it!
+    // create a new objec that switches the keys and the value around
+    const result = { x: "a", y: "b", z: "c" };  // Do it!
+    
+    // Accomplish this with a function call to jsr:@std/collecitons
+    const solution = invert(challenge)
+    console.log(solution)
+    return solution
+}
 
-// Accomplish this with a function call to jsr:@std/collecitons
-const solution = invert(challenge)
-console.log(solution)
+
+////////////////////////////////////////////////////////////////////
+/////// Tasks ///////
+
+export function intervalCount() {
+    let i = 0;
+
+    setInterval(() => {
+        console.log(i * 2)
+        i++;
+    }, 1000)
+}
+
+// intervalCount();
