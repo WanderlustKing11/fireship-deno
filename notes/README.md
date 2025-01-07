@@ -97,4 +97,13 @@ Here are some random pointers that I learned while going through the videos.
 - In the **lint** and **fmt** objects, you're also able to *include* and *exclude* **files** and **directories**. Like, you might want to only run linter on the source directory that contains your source code, but exclude it on your testing data.
 
 
+## Deno Bench
+- We can test our various algorithms' performance with `deno bench [OPTIONS] [filename]...` with some code written in our `arr-sum.ts` file.
 
+- We'll recieve a report that shows us how many iterations of a function it was able to run per second and its average execution time, as well as the best case and worst case performance.
+
+- At a high level, it also gives a summary that shows us which function is fastest.
+    - Surpringly, the traditional **for loop** is significantly faster than the others.
+    - Basically, what type of loop you use doesn't matter, unless you're looping over massive arrays. In which case, you'll want to use a traditional for loop.
+
+- In our `arr-includes.ts` we go over some optimization with some serious impact on performance when searching for a value in an array. Also see and use **bench** on `arr-sort.ts`.
