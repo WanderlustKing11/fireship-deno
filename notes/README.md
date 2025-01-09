@@ -3,13 +3,14 @@ This README.md file is just used for notes regarding the Deno course.
 
 Here are some random pointers that I learned while going through the videos.
 
+## Welcome To Deno
 
 - To be honest, I need to review meta.main. I know it helped make imports accessible in one scope, but not another.
 
-## Modules
+### Modules
 - Regarding Modules, we only need to worry about export/import. You can custom name any default imports.
 
-## JSR
+### JSR
 - Dino uses JSR as its main package registry, and has a big standard library. It was created by Deno with TypeScript first in mind.
 
 - There are 3 ways to install JSR packages:
@@ -21,14 +22,14 @@ Here are some random pointers that I learned while going through the videos.
     - https://unpkg.com/:package@:version/:file
 
 
-## TypeScript
+### TypeScript
 - You can use the --check flag when running deno to check your vanilla JS for type errors.
     - You can also just check without running the program: `deno check app.ts`
 
 - To interact with the DOM, we have to go into deno.json and add libs for dom and deno to "compilerOptions"
 
 
-## Instant Docs
+### Instant Docs
 - You can have Deno create docs for you, and even have them published in their own website!!
 - Imagine we have a lib.ts file with a funciton in it.
     - Make sure that function has a *type* signature.
@@ -39,14 +40,14 @@ Here are some random pointers that I learned while going through the videos.
     - You can serve this up locally, or right click the html file to copy path into a browser.
 
 
-## Permissions
+### Permissions
 - To avoid the prompt that allows us to read the file, run: `deno run --allow-read <file.ts>
     - You can also choose to use the `-A` flag for this
 
 - We can choose to be more granlar with our permissions. If we have multiple files, but we only want to grant access to specific ones, then run: `deno run --allow-read --deny-read =./diary.txt app.ts`
 
 
-## Tasks
+### Tasks
 - Instead of memorizing a ton of different commands (such as starting a dev server, build for prod, run tests, and database migrations, etc.), we can use Deno's tasks.
     - You can define commands in tasks in the deno.json file.
 
@@ -70,7 +71,7 @@ Here are some random pointers that I learned while going through the videos.
 - Unix commands can be used direclty in *task*.
 
 
-## ENV VARS
+### ENV VARS
 - It's possible to set Env Vars in tasks using the export keyword:
     - `"dev": "export KILLCODE=hello && deno run app.ts"`
     - then in app.ts: `Deno.env.get('KILLCODE')
@@ -83,7 +84,7 @@ Here are some random pointers that I learned while going through the videos.
 - Make sure to keep **.env** in your **.gitignore** file so you don't accidentally commit it to your public git repo.
 
 
-## Formatting && Linting
+### Formatting && Linting
 - `dino lint [OPTIONS] [files]...`
 
 - Instead of as a 3rth party, lint comes with Deno. Comes with squigly lines and hover-over options.
@@ -97,7 +98,7 @@ Here are some random pointers that I learned while going through the videos.
 - In the **lint** and **fmt** objects, you're also able to *include* and *exclude* **files** and **directories**. Like, you might want to only run linter on the source directory that contains your source code, but exclude it on your testing data.
 
 
-## Deno Bench
+### Deno Bench
 - We can test our various algorithms' performance with `deno bench [OPTIONS] [filename]...` with some code written in our **arr-sum.ts** file.
 
 - We'll recieve a report that shows us how many iterations of a function it was able to run per second and its average execution time, as well as the best case and worst case performance.
@@ -109,7 +110,7 @@ Here are some random pointers that I learned while going through the videos.
 - In our **arr-includes.ts** we go over some optimization with some serious impact on performance when searching for a value in an array. Also see and use `bench` on **arr-sort.ts**.
 
 
-## Testing
+### Testing
 - JS is known for having too many testing frameworks which will likely fall apart with configuration issues when setting them up.
 
 - Deno fixes this with its own built-in testing framework. We see an example of this with our lib.ts file
@@ -125,3 +126,21 @@ Here are some random pointers that I learned while going through the videos.
         - `deno test --coverage=cov_profile`
         - `deno coverage cov_profile`
 
+
+
+## CLI Mini-Project
+
+- Here's we'll build a mini-project command line tool. This tool takes text as an imput and then format it in different ways. Sure, it's super basic, but the point is to learn lots of interesting details and features that Deno offers from its standard library.
+
+- Everything here will be built without the use of any 3rd party libraries. Other common libaries include **chalk** or **inquisitor**.
+
+- An interesting note, rather than running this with Deno we'll compile our program to an executable binary **./cli.exe**, which lets us use and distribute it anywhere without the need to have Deno installed.
+
+- One more note is that Deno has a feature called **Foregin Function Interface** that allows us to execute code in other programming languages.
+
+
+### Deno Args
+
+- With our basic **cli.ts** file, we started by using `parseArgs` receive inputs, as well as set up expectations for what we want to recieve.
+
+- Besides taking inputs from flags, we can also use the built-in `prompt` function. Or, if you're dealing with a *boolean* value, you can use the built-in `confirm` function, which will ask the user a *yes or no* question.
