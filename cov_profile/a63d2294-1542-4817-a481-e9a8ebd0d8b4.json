@@ -1,0 +1,46 @@
+{
+  "scriptId": "315",
+  "url": "file:///E:/Stark_Labs/projects/fireship/deno-course/main_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 1363, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "multiplyTest",
+      "ranges": [{ "startOffset": 363, "endOffset": 460, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 555, "endOffset": 596, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 726, "endOffset": 862, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "mockApi",
+      "ranges": [{ "startOffset": 756, "endOffset": 788, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 998, "endOffset": 1360, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1140, "endOffset": 1171, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 1204, "endOffset": 1356, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

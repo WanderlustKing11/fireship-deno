@@ -1,0 +1,16 @@
+{
+  "scriptId": "316",
+  "url": "file:///E:/Stark_Labs/projects/fireship/deno-course/lib.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 290, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "multiply",
+      "ranges": [{ "startOffset": 53, "endOffset": 96, "count": 3 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -80,7 +80,7 @@ Here are some random pointers that I learned while going through the videos.
     - `"dev": "deno run --env app.ts"`
     - This tells Deno to take our .env file and load it into our environment.
 
-- Make sure to keep **.env** in your `.gitignore` file so you don't accidentally commit it to your public git repo.
+- Make sure to keep **.env** in your **.gitignore** file so you don't accidentally commit it to your public git repo.
 
 
 ## Formatting && Linting
@@ -98,7 +98,7 @@ Here are some random pointers that I learned while going through the videos.
 
 
 ## Deno Bench
-- We can test our various algorithms' performance with `deno bench [OPTIONS] [filename]...` with some code written in our `arr-sum.ts` file.
+- We can test our various algorithms' performance with `deno bench [OPTIONS] [filename]...` with some code written in our **arr-sum.ts** file.
 
 - We'll recieve a report that shows us how many iterations of a function it was able to run per second and its average execution time, as well as the best case and worst case performance.
 
@@ -106,4 +106,22 @@ Here are some random pointers that I learned while going through the videos.
     - Surpringly, the traditional **for loop** is significantly faster than the others.
     - Basically, what type of loop you use doesn't matter, unless you're looping over massive arrays. In which case, you'll want to use a traditional for loop.
 
-- In our `arr-includes.ts` we go over some optimization with some serious impact on performance when searching for a value in an array. Also see and use **bench** on `arr-sort.ts`.
+- In our **arr-includes.ts** we go over some optimization with some serious impact on performance when searching for a value in an array. Also see and use `bench` on **arr-sort.ts**.
+
+
+## Testing
+- JS is known for having too many testing frameworks which will likely fall apart with configuration issues when setting them up.
+
+- Deno fixes this with its own built-in testing framework. We see an example of this with our lib.ts file
+    - We created a dedicated file for testing features in **main_test.ts**, where we ran the Deno test function.
+    - We can use either the IDE, with a green checkmark that shows the results of our tests, or in the terminal with the `deno test` command.
+        - You can either specify a file to test, or if left empty it will default to run every test in your entire application.
+
+- **JEST** has been one of the most popular framework in recent years. An alternative way to test is to use the `expect` function from the standard library, which is designed to be fully compatible with JEST. There are also other ways to run tests, as you can see in our **main_test.ts** file.
+
+
+- Deno can also provide a **code coverage report** which will tell you how much of your code covered by testing: `deno coverage`
+    - I had to run these two lines to make this work (as per Deno's documentation):
+        - `deno test --coverage=cov_profile`
+        - `deno coverage cov_profile`
+

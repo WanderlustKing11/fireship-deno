@@ -1,13 +1,13 @@
 // // Learning about meta.main // //
 
-// export function helloworld() {
-//   console.log('Main?', import.meta.main)
-//   return 'Hi Mom!'
-// }
+export function helloworld() {
+  console.log('Main?', import.meta.main)
+  return 'Hi Mom!'
+}
 
-// if (import.meta.main) {
-//   console.log(helloworld());
-// }
+if (import.meta.main) {
+  console.log(helloworld());
+}
 
 //////////////////////////////////////////////
 
