@@ -144,3 +144,14 @@ Here are some random pointers that I learned while going through the videos.
 - With our basic **cli.ts** file, we started by using `parseArgs` receive inputs, as well as set up expectations for what we want to recieve.
 
 - Besides taking inputs from flags, we can also use the built-in `prompt` function. Or, if you're dealing with a *boolean* value, you can use the built-in `confirm` function, which will ask the user a *yes or no* question.
+
+- What's pretty cool is the Deno standard library has a bunch of formatting colors that we can use to highlight error or success messages for greater readability. 
+
+- run: `deno run ./CLI_mini-project/cli.ts --text "Hi Mom how are you?" --kebab --snake`
+
+
+### Foregin Function Interface
+
+- FFI allows you to use native libraries from non-JavaScript languages, like from *C*, *Rust*, *C#*, etc.
+
+- To demoonstrate this, we modified the **cli.ts** tool from our last section. 
