@@ -179,3 +179,10 @@ Here are some random pointers that I learned while going through the videos.
     - Run it, and boom... you have just executed code on a separate thread.
 
 - Let's look at a more powerful example by spawning multiple *workers* at the same time, by simply looping through an array of numbers to apply to our `fibonacci()`. All of our workers are running at parallel, and are taking up a seperate CPU core.
+
+
+## Link Shortener Project
+
+- Now we start building our project which will be a link sharing app, similar to *Bit.ly*, but built entirely with Deno primitives. There are no 3rd party npm packages or dependencies, just plain TypeScript and the Deno standard library. That includes the database, because Deno has a built in *key-value* store.
+
+- However, I want to have a clean project structure, so you can go to my [Deno-Link repo](https://github.com/WanderlustKing11/deno-link) to continue following along.
