@@ -154,4 +154,20 @@ Here are some random pointers that I learned while going through the videos.
 
 - FFI allows you to use native libraries from non-JavaScript languages, like from *C*, *Rust*, *C#*, etc.
 
-- To demoonstrate this, we modified the **cli.ts** tool from our last section. 
+- To demoonstrate this, we modified the **cli.ts** tool from our last section to successfully run some custom **C** code.
+
+
+### Compile
+
+- What if we wanted to create an executable so that anyone could run our code without them having to install Deno?
+
+- This is possible thanks to `deno compile -A -o upper ./CLI_min-project/cli.ts`
+    - The `-o` flag gives the executable a name.
+    - `-A` gives permissions to grant access to run the program
+
+- So in this case, the command above creates an **upper.exe** file in our root directory. And since it was running our **cli.ts** function, we can run this file like this: `./upper.exe --text "deno is cool" --kebab`.
+
+- **HELP!** Unfortunately, I'm having some trouble with this as every time that I run upper.exe, I get a *SyntaxError* regarding the type casting in the `toCString(str: string)` function. This means it's not accepting my TypeScript as correct code, and can't actually execute the executable lol. So... will return to this, but if there are any thoughts, feel free to drop a comment.
+
+
+### Multi-Threading
