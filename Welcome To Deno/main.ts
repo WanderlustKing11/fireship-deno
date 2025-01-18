@@ -82,3 +82,21 @@ export function intervalCount() {
 }
 
 // intervalCount();
+
+
+
+////////////////////////////////////////////////////////////////////
+///////// Multi-Threading //////////
+
+// const worker = new Worker(
+//   new URL("/CLI_mini-project/worker.ts", import.meta.url).href,
+//   {
+//     type: "module",
+//   },
+// );
+
+// worker.postMessage({ n: 23 });
+
+// worker.onmessage = (e) => {
+//   console.log(`Main Thread:`, e.data);
+// };

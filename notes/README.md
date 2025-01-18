@@ -171,3 +171,11 @@ Here are some random pointers that I learned while going through the videos.
 
 
 ### Multi-Threading
+
+- Here we'll try to run a test function in **worker.ts** which may take some time to finish (using our `fibonacci()`) and make it run in the backend on a seperate thread, while the main JavaScript thread keeps going uninterrupted.
+
+- To do this, we're using **Web Workers API**, which Deno has made available. The way to start up a *worker* is by sending is a message with some data from the main thread. And we use our **main2.ts** to put it to use by instantiating a *worker object* and pointing it to our **worker.ts** file. All we have to do then is call something like a **postMessage** function with the data that we want it to process. Run with `deno run -A main2.ts`
+    - You may want to use the data from the *worker* to do something on the main thread. Simply listen to the return message on the worker. In our case, we used **onmessage** to console log the result of the `fibonacci()`.
+    - Run it, and boom... you have just executed code on a separate thread.
+
+- Let's look at a more powerful example by spawning multiple *workers* at the same time, by simply looping through an array of numbers to apply to our `fibonacci()`. All of our workers are running at parallel, and are taking up a seperate CPU core.
